@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //======================================================================
 // LÓGICA DO RELÓGIO
 //======================================================================
-let porcentagem = 25;
+let porcentagem = 35;
 
 let barraProgresso = document.getElementById('barraProgresso');
 let textoPorcentagem = document.getElementById('textoPorcentagem');
