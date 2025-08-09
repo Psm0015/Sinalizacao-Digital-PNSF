@@ -1,0 +1,31 @@
+/* Estilo minimalista para o card de clima */
+.clima-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 2em 2.5em 1.5em 2.5em;
+  max-width: 320px;
+  margin: 2em auto;
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+  transition: box-shadow 0.3s;
+}
+
+.clima-card h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1em;
+  letter-spacing: 0.04em;
+}
+
+.clima-card p {
+  margin: 0.5em 0;
+  font-size: 1.05rem;
+}
+
+.clima-card img {
+  width: 70px;
+  height: 70px;
+  margin: 0.5em 0 1em 0;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.10));
+}
