@@ -75,6 +75,35 @@ let textoPorcentagem = document.getElementById('textoPorcentagem');
 barraProgresso.style.width = porcentagem + '%';
 barraProgresso.setAttribute('aria-valuenow', porcentagem);
 
-// Atualize o texto que exibe a porcentagem
-// A propriedade 'innerHTML' permite alterar o conteúdo HTML interno do elemento
 textoPorcentagem.innerHTML = `Estamos com <b style="font-weight: 700; color: #0d6efd;">${porcentagem}%</b> completos!`;
+
+//
+//
+//
+const ativarWakeLock = async () => {
+        // Verifica se a API é suportada
+        if ('wakeLock' in navigator) {
+            try {
+                // 2. Agora o 'await' está dentro de uma função async, o que é válido.
+                const wakeLock = await navigator.wakeLock.request('screen');
+                console.log('Wake Lock ativado! A tela não será desligada.');
+
+                wakeLock.addEventListener('release', () => {
+                    console.log('Wake Lock liberado.');
+                });
+            } catch (err) {
+                console.error(`Falha ao ativar o Wake Lock: ${err.name}, ${err.message}`);
+            }
+        } else {
+            console.warn('A API Wake Lock não é suportada neste navegador.');
+        }
+    };
+
+//===============================
+//ANTI SCREEN LOCK
+//===============================
+document.addEventListener('DOMContentLoaded', () => {
+    $("#anti-screen-lock").get(0).play().catch(error => {
+        console.error("Erro ao travar a tela:", error);
+    });
+});
